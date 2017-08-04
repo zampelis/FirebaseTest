@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+@import Firebase;
 
 @interface ViewController ()
 
@@ -25,5 +26,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)sendFirebaseAnalyticsEvent:(UIButton *)sender {
+    
+    [FIRAnalytics logEventWithName:kFIREventSelectContent
+                        parameters:@{
+                                     kFIRParameterItemID:[NSString stringWithFormat:@"id-%@", self.title],
+                                     kFIRParameterItemName:self.title,
+                                     kFIRParameterContentType:@"image"
+                                     }];
+    
+}
 
 @end
