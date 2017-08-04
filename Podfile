@@ -7,7 +7,10 @@ target 'firebasetest' do
 
   # Pods for firebasetest
   pod 'Firebase/Core'
-
+  pod 'FirebaseUI', '~> 4.0'
+  pod 'FirebaseUI/Phone', '~> 4.0'
+  pod 'FirebaseUI/Auth', '~> 4.0'
+  
   target 'firebasetestTests' do
     inherit! :search_paths
     # Pods for testing
